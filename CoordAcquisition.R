@@ -1,5 +1,0 @@
-coord <- scan("http://securitydata.newamerica.net/drones/pakistan/analysis?page=0", what="character", nmax=388, sep = "^", skip=338)
-coord <- gsub("(^\\s+.*\\[)|(\\s+$)|(\\s+\\];)|(\\])","", coord, perl=TRUE)
-coord <- gsub("(<h2>.*Location</strong>:\\s)|(</li><li>.*</li></ul>.*)","'", coord, perl=TRUE)
-write(coord, file="C:/Users/ykudryavtseva/YandexDisk/R/extr_coor/data_coord.csv")
-coordinates <- as.data.frame(read.table("C:/Users/ykudryavtseva/YandexDisk/R/extr_coor/data_coord.csv", header=FALSE, sep=",", quote="\"'", dec=".", col.names =c ("latitude", "longitude", "location"), colClasses = c("numeric", "numeric", "character"), fill = FALSE))
